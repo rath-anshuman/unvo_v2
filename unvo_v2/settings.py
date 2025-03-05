@@ -74,12 +74,17 @@ WSGI_APPLICATION = 'unvo_v2.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 import os
+from dotenv import load_dotenv
 import dj_database_url
 
-# Use the DATABASE_URL environment variable 
+# Load environment variables from .env file
+load_dotenv()
+
+# Configure the database using the DATABASE_URL from the .env file
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
+
 
 
 
