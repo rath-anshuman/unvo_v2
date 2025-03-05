@@ -122,13 +122,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# settings.py
+
+
+# The URL for serving static files
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# The directory where static files will be located
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # This should point to the 'static' folder in your project
+]
 
+# Where static files will be collected to during `collectstatic`
+# (This might be unnecessary if you're not running `collectstatic`)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
